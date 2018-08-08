@@ -20,7 +20,7 @@
 
               <!-- "Pulled" button group -->
               <div class="pull-right">
-                <button type="button" class="btn btn-info" (click)="showDialog()">Show dialog</button>
+                <button type="button" class="btn btn-info" (click)="showDialog()" id="showDialog">Show dialog</button>
                 <button type="button" class="btn btn-success">Edit</button>
                 <button type="button" class="btn btn-danger">Delete</button>
               </div>
@@ -88,7 +88,7 @@
                   <!-- Form group -->
                   <div class="form-group">
                     <label class="form-control-label required-field">Required field</label>   <!-- Required field -->
-                    <input type="text" class="form-control" placeholder="First name">
+                    <input type="text" class="form-control" placeholder="First name" [value]="message" name="message">
                   </div>
 
                 </div>

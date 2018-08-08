@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageBoxDialog} from 'eds-angular4';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {SettingsService} from './settings.service';
 
 @Component({
   selector: 'app-record-viewer',
@@ -17,10 +18,17 @@ export class SettingsComponent implements OnInit {
   ];
 
   selection: any = this.tableData[2];
+  message: string;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal,
+              private service: SettingsService) { }
 
   ngOnInit() {
+    this.service.getMessage('Fred')
+      .subscribe(
+        (result) => this.message = result,
+        (error) => console.error(error)
+      )
   }
 
   showDialog() {

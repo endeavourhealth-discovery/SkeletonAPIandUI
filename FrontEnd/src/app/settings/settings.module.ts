@@ -3,6 +3,7 @@ import { SettingsComponent } from './settings/settings.component';
 import {DialogsModule} from 'eds-angular4';
 import {CommonModule} from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {SettingsService} from './settings/settings.service';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DialogsModule,
     NgbModule
   ],
-  declarations: [SettingsComponent]
+  declarations: [SettingsComponent],
+  providers: [SettingsService]
 })
 export class SettingsModule { }
