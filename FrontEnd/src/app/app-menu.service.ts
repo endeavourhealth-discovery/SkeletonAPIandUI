@@ -26,7 +26,10 @@ export class AppMenuService implements  AbstractMenuProvider {
 
   getMenuOptions(): MenuOption[] {
     return [
-      {caption: 'Skeleton module', state: 'skeleton', icon: 'fa fa-user', role: 'eds-user-manager:user-manager'}
+      {caption: 'Skeleton module', state: 'skeleton', icon: 'fa fa-user', role: 'eds-user-manager:user-manager'},
+      {caption: 'Configuration', state: 'config', icon: 'fa fa-cogs', role: 'eds-user-manager:user-manager'},
+      {caption: 'Delegation', state: 'config', icon: 'fa fa-group', role: 'eds-user-manager:user-manager'},
+      {caption: 'Audit', state: 'config', icon: 'fa fa-list', role: 'eds-user-manager:user-manager'}
     ];
   }
 }
