@@ -1,25 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import {KeycloakService} from "eds-angular4/dist/keycloak/keycloak.service";
-import {keycloakHttpFactory} from "eds-angular4/dist/keycloak/keycloak.http";
-import {Http, HttpModule, RequestOptions, XHRBackend} from "@angular/http";
-import {LayoutComponent} from "eds-angular4/dist/layout/layout.component";
-import {LayoutModule, MenuService} from "eds-angular4";
-import {AppMenuService} from "./app-menu.service";
-import {SettingsComponent} from "./settings/settings/settings.component";
-import {SettingsModule} from "./settings/settings.module";
-import {ConceptModellerComponent} from "./concept-modeller/concept-modeller/concept-modeller.component";
-import {ConceptModellerModule} from "./concept-modeller/concept-modeller.module";
-
-export class DummyComponent {}
-
-const appRoutes: Routes = [
-  { path: 'conceptModeller', component: ConceptModellerComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'eds-user-manager', component: DummyComponent }
-];
+import { RouterModule } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ToastModule} from 'ng2-toastr';
+import {KeycloakService} from 'eds-angular4/dist/keycloak/keycloak.service';
+import {keycloakHttpFactory} from 'eds-angular4/dist/keycloak/keycloak.http';
+import {Http, HttpModule, RequestOptions, XHRBackend} from '@angular/http';
+import {LayoutComponent} from 'eds-angular4/dist/layout/layout.component';
+import {LayoutModule, AbstractMenuProvider} from 'eds-angular4';
+import {AppMenuService} from './app-menu.service';
+import {SettingsModule} from './settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -29,13 +19,14 @@ const appRoutes: Routes = [
     HttpModule,
     LayoutModule,
     SettingsModule,
-    ConceptModellerModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(AppMenuService.getRoutes(), {useHash: true}),
+    NgbModule.forRoot(),
+    ToastModule.forRoot()
   ],
   providers: [
     KeycloakService,
     { provide: Http, useFactory: keycloakHttpFactory, deps: [XHRBackend, RequestOptions, KeycloakService] },
-    { provide: MenuService, useClass : AppMenuService }
+    { provide: AbstractMenuProvider, useClass : AppMenuService }
   ],
   bootstrap: [LayoutComponent]
 })

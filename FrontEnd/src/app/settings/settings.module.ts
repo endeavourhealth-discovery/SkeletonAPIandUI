@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SettingsComponent } from './settings/settings.component';
+import {DialogsModule} from 'eds-angular4';
+import {CommonModule} from '@angular/common';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    DialogsModule,
+    NgbModule
   ],
   declarations: [SettingsComponent]
 })

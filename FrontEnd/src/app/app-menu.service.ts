@@ -1,16 +1,32 @@
-import {Injectable} from "@angular/core";
-import {MenuService} from "eds-angular4";
-import {MenuOption} from "eds-angular4/dist/layout/models/MenuOption";
+import {Injectable} from '@angular/core';
+import {AbstractMenuProvider} from 'eds-angular4';
+import {MenuOption} from 'eds-angular4/dist/layout/models/MenuOption';
+import {SettingsComponent} from './settings/settings/settings.component';
+import {Routes} from '@angular/router';
 
 @Injectable()
-export class AppMenuService implements  MenuService {
-  getApplicationTitle(): string {
-    return 'Information Modeller';
-  }
-  getMenuOptions():MenuOption[] {
+export class AppMenuService implements  AbstractMenuProvider {
+  static getRoutes(): Routes {
     return [
-      {caption: 'Concept Modeller', state: 'conceptModeller', icon: 'fa fa-sitemap'},
-      {caption: 'IM Settings', state: 'settings', icon: 'fa fa-cogs'}
+      { path: '', redirectTo : 'skeleton', pathMatch: 'full' }, // Default route
+      {path: 'skeleton', component: SettingsComponent}
+    ];
+  }
+  getApplicationTitle(): string {
+    return 'Skeleton tool';             // TODO: Tool title
+  }
+
+  getClientId(): string {
+    return 'eds-user-manager';          // TODO: Client id
+  }
+
+  useUserManagerForRoles(): boolean {
+    return false;
+  }
+
+  getMenuOptions(): MenuOption[] {
+    return [
+      {caption: 'Skeleton module', state: 'skeleton', icon: 'fa fa-user', role: 'eds-user-manager:user-manager'}
     ];
   }
 }
