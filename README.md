@@ -1,4 +1,8 @@
 # Skeleton API and UI Project
+![Version](https://s3.eu-west-2.amazonaws.com/endeavour-codebuild/badges/skeleton/version.svg)
+![Build Status](https://s3.eu-west-2.amazonaws.com/endeavour-codebuild/badges/skeleton/build.svg)
+![Unit Tests](https://s3.eu-west-2.amazonaws.com/endeavour-codebuild/badges/skeleton/unit-test.svg)
+
 A skeleton project containing a fully working Java API and Angular UI allowing anyone to start developing quickly
 
 This is a fully working end to end sample including:
