@@ -8,6 +8,8 @@ This is a fully working end to end sample including:
 * Swagger integration for documentation of API calls  
 * Connects to the Config database to retrieve DB connection strings and Keycloak config
 
+**NOTE: If you are using a copy of this as a template for a new application, open the "TODO" window (IntelliJ) to see the list of application specific entries.**
+
 ## API Information  
 The project is setup as follows.
 
