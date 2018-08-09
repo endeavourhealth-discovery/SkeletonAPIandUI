@@ -1,23 +1,24 @@
 # Skeleton API and UI Project
 A skeleton project containing a fully working Java API and Angular UI allowing anyone to start developing quickly
 
-This is fully working end to end sample including:
+This is a fully working end to end sample including:
 
 * Keycloak integration for both the API and the Angular frontend.  
 * Dropwizard Metrics for all API calls  
 * Swagger integration for documentation of API calls  
-* Persistence set up to allow access to DB entities using Hibernate/JPA  
 * Connects to the Config database to retrieve DB connection strings and Keycloak config
 
 ## API Information  
-
 The project is setup as follows.
 
 #### database  
 Contains all the Java DB entities for the tables in the models folder and PersistenceManager which handles the connections to the DB.
  
 #### endpoints  
-Contains all the endpoints for the API where most of the code is held
+Contains all the endpoints for the API 
+
+#### logic
+Contains the business logic for the application.  This is where most of the code is held and should be unit tested
 
 #### framework
 Contains standard exception classes and swagger bootstrap code.  This is also where the Metrics are initialised on loading
@@ -33,9 +34,10 @@ create a run configuration in intelliJ using Tomcat -> Local.
 In deployment tab, click + choose Artifact and select API:war exploded
 In the startup tab, click on debug and add these options into the environment variables. 
 
-CONFIG_JDBC_USERNAME=postgres
-CONFIG_JDBC_PASSWORD=YOURPOSTGRESPASSWORD
-CONFIG_JDBC_URL=jdbc:postgresql://localhost:5432/config
+CONFIG_JDBC_CLASS=com.mysql.jdbc.Driver
+CONFIG_JDBC_URL=jdbc:mysql://localhost:3306/config?useSSL=false
+CONFIG_JDBC_USERNAME=root
+CONFIG_JDBC_PASSWORD=<password>
 
 Click run and it should be up and running.
 
