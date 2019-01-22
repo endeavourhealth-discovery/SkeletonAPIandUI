@@ -10,6 +10,9 @@ phases:
       - echo Build started on `date`
       - chmod +x aws_scripts/build.sh
       - aws_scripts/build.sh mvn -B deploy
+      - echo Analysis started on `date`
+      - mvn sonar:sonar
+
   post_build:
     commands:
       - IP=$(curl http://checkip.amazonaws.com)/32

@@ -15,6 +15,12 @@
     <version>0.0.1</version>
     <packaging>war</packaging>
 
+    <properties>
+        <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::API</sonar.projectKey>
+        <sonar.exclusions>**/docs/**/*</sonar.exclusions>
+    </properties>
+
+
     <dependencies>
         <!-- Common for Exceptions -->
         <dependency>

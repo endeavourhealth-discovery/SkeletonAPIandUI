@@ -13,52 +13,62 @@
 
     <artifactId>FrontEnd</artifactId>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>${frontend-maven-plugin.version}</version>
-        <configuration>
-          <installDirectory>src/main/frontend</installDirectory>
-          <workingDirectory>src/main/frontend</workingDirectory>
-        </configuration>
-        <executions>
-          <execution>
-            <id>install node and npm</id>
-            <goals><goal>install-node-and-npm</goal></goals>
-            <configuration>
-              <nodeVersion>${node.version}</nodeVersion>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm set no progress</id>
-            <goals><goal>npm</goal></goals>
-            <configuration>
-              <arguments>set progress=false</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm install</id>
-            <goals><goal>npm</goal></goals>
-          </execution>
-          <execution>
-            <id>typings install</id>
-            <goals><goal>npm</goal></goals>
-            <configuration>
-              <arguments>run typings -- install</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>ng build</id>
-            <goals><goal>npm</goal></goals>
-            <configuration>
-              <arguments>run build</arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+    <properties>
+      <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::FrontEnd</sonar.projectKey>
+      <sonar.sources>src</sonar.sources>
+      <sonar.typescript.tsconfigPath>tsconfig.json</sonar.typescript.tsconfigPath>
+      <sonar.ts.tslint.configPath>tslint.json</sonar.ts.tslint.configPath>
+      <sonar.exclusions>**/node_modules/**, **/*.spec.ts, **/environments/**/*</sonar.exclusions>
+      <sonar.typescript.lcov.reportPaths>coverage/lcov.info</sonar.typescript.lcov.reportPaths>
+    </properties>
+
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>com.github.eirslett</groupId>
+          <artifactId>frontend-maven-plugin</artifactId>
+          <version>${frontend-maven-plugin.version}</version>
+          <configuration>
+            <installDirectory>src/main/frontend</installDirectory>
+            <workingDirectory>src/main/frontend</workingDirectory>
+          </configuration>
+          <executions>
+            <execution>
+              <id>install node and npm</id>
+              <goals><goal>install-node-and-npm</goal></goals>
+              <configuration>
+                <nodeVersion>${node.version}</nodeVersion>
+              </configuration>
+            </execution>
+            <execution>
+              <id>npm set no progress</id>
+              <goals><goal>npm</goal></goals>
+              <configuration>
+                <arguments>set progress=false</arguments>
+              </configuration>
+            </execution>
+            <execution>
+              <id>npm install</id>
+              <goals><goal>npm</goal></goals>
+            </execution>
+            <execution>
+              <id>typings install</id>
+              <goals><goal>npm</goal></goals>
+              <configuration>
+                <arguments>run typings -- install</arguments>
+              </configuration>
+            </execution>
+            <execution>
+              <id>ng build</id>
+              <goals><goal>npm</goal></goals>
+              <configuration>
+                <arguments>run build</arguments>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
 
 </project>
