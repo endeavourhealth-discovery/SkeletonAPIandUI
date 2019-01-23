@@ -14,7 +14,8 @@
     <artifactId>FrontEnd</artifactId>
 
     <properties>
-      <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::FrontEnd</sonar.projectKey> <!-- TODO change `SkeletonAPIandUI to your repo name -->
+      <!-- TODO change SkeletonAPIandUI to your repo name -->
+      <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::FrontEnd</sonar.projectKey>
       <sonar.sources>src</sonar.sources>
       <sonar.typescript.tsconfigPath>tsconfig.json</sonar.typescript.tsconfigPath>
       <sonar.ts.tslint.configPath>tslint.json</sonar.ts.tslint.configPath>
