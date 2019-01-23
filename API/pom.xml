@@ -16,7 +16,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::API</sonar.projectKey>
+        <sonar.projectKey>endeavourhealth-discovery_SkeletonAPIandUI::API</sonar.projectKey> <!-- TODO change `SkeletonAPIandUI to your repo name -->
         <sonar.exclusions>**/docs/**/*</sonar.exclusions>
     </properties>
 
