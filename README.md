@@ -56,6 +56,9 @@ service.ts files are used to communicate with the API.
 Create a run configuration in intelliJ using npm
 in the script input type start
 Click run and it should start running on [http://localhost:4200](http://localhost:4200/) 
+Alternatively, in the terminal, navigate to the `frontend` folder and run 
+
+`npm run start`
 
 
 **Please keep this project updated with any additions/modifications when starting or contributing to a new project to allow others to get up to speed as quickly as possible.**
