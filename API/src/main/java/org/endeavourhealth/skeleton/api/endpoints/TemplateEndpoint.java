@@ -1,6 +1,5 @@
 package org.endeavourhealth.skeleton.api.endpoints;
 import com.codahale.metrics.annotation.Timed;
-import io.astefanutti.metrics.aspectj.Metrics;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -13,7 +12,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @Path("/template")                                                                          // TODO: endpoint path
-@Metrics(registry = "templateMetricRegistry")                                               // TODO: metrics registry
 @Api(description = "Api for all calls relating to the template")                            // TODO: endpoint description
 public class TemplateEndpoint {
 
